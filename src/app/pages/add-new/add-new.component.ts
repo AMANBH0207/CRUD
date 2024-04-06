@@ -46,7 +46,7 @@ export class AddNewComponent implements OnInit {
       this.myForm.reset();
       this.openSuccessAdd()
     } else {
-      console.log("Form is invalid");
+      this.openError();
     }
   }
 
@@ -76,11 +76,14 @@ export class AddNewComponent implements OnInit {
       this.dataArray[this.index]=this.myForm.value;
       console.log(this.dataArray);
       localStorage.setItem('Data', JSON.stringify(this.dataArray));
-    }
-    this.myForm.reset();
+      this.myForm.reset();
     this.index=undefined;
     this.s1Service.index=undefined;
     this.openSuccessUpdate();
+    }else{
+      this.openError();
+    }
+    
   }
 
   //functions for toast message
@@ -89,5 +92,8 @@ export class AddNewComponent implements OnInit {
   }
   openSuccessAdd(){
     this.toast.success({detail:"Data has been added",summary:"Now you can add more data here",duration:5000});
+  }
+  openError(){
+    this.toast.error({detail:"Fill all details",summary:"Please try again",duration:5000});
   }
 }
