@@ -33,6 +33,8 @@ export class AddNewComponent implements OnInit {
     this.getDataForUpdate()
   }
   
+
+  //Function to submit data to save in local storage
   submitForm() {
     if (this.myForm.valid) {
       // Form submission logic
