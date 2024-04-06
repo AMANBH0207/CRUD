@@ -10,15 +10,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Note-Make sure to check whether angular cli, node and npm have been installed 
 on your machine.
 
-for checking angular version- ng version
-for checking node version- node -- version
-for checking npm version- npm --version
+for checking angular version- `ng version`
+for checking node version- `node -- version`
+for checking npm version- `npm --version`
 
 
-2) Now open cmd in the extracted project folder and typ the command npm install this will install all the dependencies that are required for the project by taking the reference from package.json file.
+2) Now open cmd in the extracted project folder and typ the command `npm install` this will install all the dependencies that are required for the project by taking the reference from package.json file.
 
 
-3) Now the project has been setup on your machine you can now use it on your machine by typing the command ng serve--o.
+3) Now the project has been setup on your machine you can now use it on your machine by typing the command `ng serve--o`.
 
 Additional-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
