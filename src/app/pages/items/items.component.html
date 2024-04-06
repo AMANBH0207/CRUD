@@ -19,8 +19,8 @@
                 <td style="width:300px;">{{item.name}}</td>
                 <td style="width:300px;">{{item.description}}</td>
                 <td>
-                    <button class="btn btn-success my-2 mx-2" >Edit</button>
-                    <button class="btn btn-danger my-2 mx-2">Delete</button>
+                    <button class="btn btn-success my-2 mx-2"(click)="updateData(i)" routerLink="additem" routerLinkActive="active">Edit</button>
+                    <button class="btn btn-danger my-2 mx-2" (click)="deleteData(i)">Delete</button>
                 </td>
               </tr>
             </tbody>

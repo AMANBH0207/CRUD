@@ -1,5 +1,5 @@
 <div class="container my-5">
-    <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="myForm">
       <div class="form-group">
         <label for="exampleInputEmail1">Enter Name:</label>
         <input type="text" class="form-control" formControlName="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" [ngClass]="{'is-invalid': myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)}">
@@ -10,6 +10,9 @@
         <textarea class="form-control" style="height: 300px;" formControlName="description" id="exampleInputPassword1" placeholder="Enter Description" [ngClass]="{'is-invalid': myForm.get('description').invalid && (myForm.get('description').dirty || myForm.get('description').touched)} "></textarea>
         <div *ngIf="myForm.get('description').invalid && (myForm.get('description').dirty || myForm.get('description').touched)" class="invalid-feedback">Please enter a description.</div>
       </div>
-      <button type="submit" class="btn btn-primary my-5">Add</button>
+      <div *ngIf="index==undefined; else elseBlock"><button (click)="submitForm()" class="btn btn-primary my-5">Add</button></div>
+      <ng-template #elseBlock><button class="btn btn-success my-5" (click)="updateData()">Update Data</button></ng-template>
+       
+      
     </form>
   </div>

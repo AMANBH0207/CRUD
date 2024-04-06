@@ -14,6 +14,17 @@ import { S1Service } from '../../Service/s1.service';
 export class ItemsComponent {
 
   constructor(private s1Service: S1Service) {  }
-
+  //getting data from localStorage
   dataArray: any[] = this.s1Service.getItems();
+
+  //Function to perform delete operation and then again show the data after deletion
+  deleteData(a: number) {
+    this.s1Service.deleteItems(a);
+    this.dataArray = this.s1Service.getItems();
+  }
+
+  //function to perform update operation
+  updateData(a: number) {
+    this.s1Service.index = a;
+    }
 }
