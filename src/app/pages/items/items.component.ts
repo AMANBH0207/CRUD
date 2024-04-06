@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { S1Service } from '../../Service/s1.service';
 
 @Component({
   selector: 'app-items',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ItemsComponent {
 
-  existingData:any = localStorage.getItem("Data");
-  dataArray: any[] = this.existingData ? JSON.parse(this.existingData) : [];
-  
+  constructor(private s1Service: S1Service) {  }
+
+  dataArray: any[] = this.s1Service.getItems();
 }
